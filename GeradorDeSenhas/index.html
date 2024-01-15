@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de Senhas</title>
+    <meta name="keywords" content="Gerador de Senhas" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <img
+      class="logo"
+      src="./assets/reset-password.png"
+      alt="Gerador de Senha logo"
+    />
+
+    <main class="container-input">
+      <!-- Indicação do Tamanho da Senha -->
+      <span>Tamanho <span id="valor">15</span> caracteres </span>
+      <!-- Controle Deslizante para Escolher o Tamanho da Senha -->
+      <input
+        id="slider"
+        class="slider"
+        type="range"
+        min="8"
+        max="32"
+        value="15"
+      />
+      <!-- Botão para Gerar Senha -->
+      <button
+        id="button"
+        class="button-cta"
+        onclick="generatePassword()"
+        role="button"
+      >
+        Gerar senha
+      </button>
+    </main>
+
+    <!-- Container para Exibir a Senha Gerada -->
+    <div
+      id="container-password"
+      onclick="copyPassword()"
+      class="container-password hide"
+    >
+      <!-- Título -->
+      <span class="title">Sua senha gerada foi:</span>
+      <!-- Senha Gerada -->
+      <span id="password" class="password" alt="Senha gerada"></span>
+      <!-- Dica para Copiar a Senha -->
+      <span class="tooltip">Clique na senha para copiar. ✌</span>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
